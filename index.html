@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jasini Digital Solutions | Premium Websites & AI Automations</title>
+  <meta name="description" content="I help hotels, restaurants, barbershops, car dealerships and local businesses stand out online with premium websites and AI-powered automations.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- --- Custom Preloader --- -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">J <span>JASINI</span></div>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar" id="preloader-bar"></div>
+      </div>
+      <div class="preloader-text">Loading Excellence</div>
+    </div>
+  </div>
+
+  <!-- --- Header / Navigation --- -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="nav-container">
+        <a href="#home" class="logo">
+          <div class="logo-icon">J</div>
+          <div class="logo-text">
+            <span class="logo-title">JASINI</span>
+            <span class="logo-sub">Digital Solutions</span>
+          </div>
+        </a>
+        <nav class="nav-menu" id="nav-menu">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#portfolio" class="nav-link">Portfolio</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#process" class="nav-link">Process</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <button class="btn-consultation" onclick="openConsultationModal()">
+          <span>Book a free Consultation</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        </button>
+        <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- --- Hero Section --- -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 22 22 22"></polygon></svg>
+            Websites & AI Automations
+          </div>
+          <h1 class="hero-title">Websites That<br><span>Grow Businesses.</span></h1>
+          <p class="hero-desc">I help hotels, restaurants, barbershops, car dealerships and local businesses stand out online with premium websites and AI-powered automations that save time and generate more bookings.</p>
+          <div class="hero-actions">
+            <a href="#portfolio" class="btn-primary">
+              <span>View My Work</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <button class="btn-secondary" onclick="openConsultationModal()">
+              <span>Book a Free Consultation</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            </button>
+          </div>
+          <div class="hero-social-proof">
+            <div class="avatar-group">
+              <img src="assets/images/jasini-portrait.png" alt="Client 1">
+              <img src="assets/images/project-lewis.png" alt="Client 2">
+              <img src="assets/images/project-fade.png" alt="Client 3">
+            </div>
+            <div class="social-proof-text">
+              Helping businesses across the <strong>UK</strong> build a stronger digital presence.
+            </div>
+          </div>
+        </div>
+        <div class="hero-mockups">
+          <div class="mockup-stack">
+            <!-- Card 1: Hotel -->
+            <div class="mockup-card" onclick="openProjectModal('lewis')">
+              <img src="assets/images/project-lewis.png" alt="Lewis Garden Suites">
+              <div class="mockup-card-info">
+                <span class="mockup-card-tag">Hotel Website</span>
+                <h3 class="mockup-card-title">Lewis Garden Suites</h3>
+              </div>
+            </div>
+            <!-- Card 2: Barbershop -->
+            <div class="mockup-card" onclick="openProjectModal('fade')">
+              <img src="assets/images/project-fade.png" alt="Fade District">
+              <div class="mockup-card-info">
+                <span class="mockup-card-tag">Barbershop Website</span>
+                <h3 class="mockup-card-title">Fade District</h3>
+              </div>
+            </div>
+            <!-- Card 3: Residence -->
+            <div class="mockup-card" onclick="openProjectModal('blackoak')">
+              <img src="assets/images/project-blackoak.png" alt="Black Oak Residence">
+              <div class="mockup-card-info">
+                <span class="mockup-card-tag">Luxury Property</span>
+                <h3 class="mockup-card-title">Black Oak Residence</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Industries Ribbon --- -->
+  <section class="industries-banner">
+    <div class="container">
+      <h2 class="industries-title">Industries I Work With</h2>
+      <div class="industries-list">
+        <div class="industry-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Hotels</span>
+        </div>
+        <div class="industry-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="22" height="13" rx="2" ry="2"></rect><path d="M9 17v4h6v-4"></path><path d="M12 17v4"></path></svg>
+          <span>Car Dealerships</span>
+        </div>
+        <div class="industry-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          <span>Restaurants</span>
+        </div>
+        <div class="industry-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg>
+          <span>Barbershops</span>
+        </div>
+        <div class="industry-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          <span>Local Businesses</span>
+        </div>
+      </div>
+      <p class="industries-subtext">Designed for businesses that rely on bookings, enquiries and walk-in customers.</p>
+    </div>
+  </section>
+
+  <!-- --- Recent Projects Section --- -->
+  <section class="section section-light-sec" id="portfolio">
+    <div class="container">
+      <div class="recent-projects-header">
+        <div class="section-header">
+          <span class="section-badge">Featured Work</span>
+          <h2 class="section-title">Recent Projects</h2>
+        </div>
+        <a href="https://github.com/cyberjay0" target="_blank" class="btn-outline">
+          <span>View All Projects</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: Lewis Garden Suites -->
+        <article class="project-card">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-lewis.png" alt="Lewis Garden Suites">
+            <button class="project-card-btn" onclick="openProjectModal('lewis')" aria-label="Open Project Details">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </button>
+          </div>
+          <div class="project-body">
+            <span class="project-cat">Hotel Website</span>
+            <h3 class="project-card-title">Lewis Garden Suites</h3>
+            <div class="project-tags">
+              <span class="project-tag">Hotel</span>
+              <span class="project-tag">Booking System</span>
+              <span class="project-tag">Luxury UI</span>
+            </div>
+            <div class="project-footer">
+              <button onclick="openProjectModal('lewis')" class="project-link-text">
+                <span>View Project</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: CrustNcrumb Pastry -->
+        <article class="project-card">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-crustncrumb.png" alt="CrustNcrumb Pastry">
+            <button class="project-card-btn" onclick="openProjectModal('crustncrumb')" aria-label="Open Project Details">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </button>
+          </div>
+          <div class="project-body">
+            <span class="project-cat">Restaurant Website</span>
+            <h3 class="project-card-title">CrustNcrumb Pastry</h3>
+            <div class="project-tags">
+              <span class="project-tag">Pastries</span>
+              <span class="project-tag">Menu Layout</span>
+              <span class="project-tag">Reservations</span>
+            </div>
+            <div class="project-footer">
+              <button onclick="openProjectModal('crustncrumb')" class="project-link-text">
+                <span>View Project</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Jayautos -->
+        <article class="project-card">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-jayautos.png" alt="Jayautos">
+            <button class="project-card-btn" onclick="openProjectModal('jayautos')" aria-label="Open Project Details">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </button>
+          </div>
+          <div class="project-body">
+            <span class="project-cat">Car Dealership</span>
+            <h3 class="project-card-title">Jayautos</h3>
+            <div class="project-tags">
+              <span class="project-tag">Dealership</span>
+              <span class="project-tag">Inventory Filter</span>
+              <span class="project-tag">Leads Setup</span>
+            </div>
+            <div class="project-footer">
+              <button onclick="openProjectModal('jayautos')" class="project-link-text">
+                <span>View Project</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: mmmautos -->
+        <article class="project-card">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-mmmautos.png" alt="mmmautos">
+            <button class="project-card-btn" onclick="openProjectModal('mmmautos')" aria-label="Open Project Details">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </button>
+          </div>
+          <div class="project-body">
+            <span class="project-cat">After-Sales Dealership</span>
+            <h3 class="project-card-title">mmmautos</h3>
+            <div class="project-tags">
+              <span class="project-tag">Car Detailing</span>
+              <span class="project-tag">Bookings</span>
+              <span class="project-tag">Nigeria Focus</span>
+            </div>
+            <div class="project-footer">
+              <button onclick="openProjectModal('mmmautos')" class="project-link-text">
+                <span>View Project</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: Fade District Barbers -->
+        <article class="project-card">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-fade.png" alt="Fade District Barbers">
+            <button class="project-card-btn" onclick="openProjectModal('fade')" aria-label="Open Project Details">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </button>
+          </div>
+          <div class="project-body">
+            <span class="project-cat">Barbershop Website</span>
+            <h3 class="project-card-title">Fade District</h3>
+            <div class="project-tags">
+              <span class="project-tag">Barbershop</span>
+              <span class="project-tag">Booking Flow</span>
+              <span class="project-tag">Modern UI</span>
+            </div>
+            <div class="project-footer">
+              <button onclick="openProjectModal('fade')" class="project-link-text">
+                <span>View Project</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6: Black Oak Residence -->
+        <article class="project-card">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-blackoak.png" alt="Black Oak Residence">
+            <button class="project-card-btn" onclick="openProjectModal('blackoak')" aria-label="Open Project Details">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </button>
+          </div>
+          <div class="project-body">
+            <span class="project-cat">Luxury Property Website</span>
+            <h3 class="project-card-title">Black Oak Residence</h3>
+            <div class="project-tags">
+              <span class="project-tag">Villa Showcase</span>
+              <span class="project-tag">Minimalist</span>
+              <span class="project-tag">Architectural</span>
+            </div>
+            <div class="project-footer">
+              <button onclick="openProjectModal('blackoak')" class="project-link-text">
+                <span>View Project</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Services & Workflows Section --- -->
+  <section class="section section-light" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Expertise & Services</span>
+        <h2 class="section-title">High-Converting Solutions</h2>
+      </div>
+
+      <div class="services-container">
+        <!-- Service Box 1: Websites -->
+        <div class="services-box">
+          <div class="services-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </div>
+          <h3 class="services-box-title">Premium Websites</h3>
+          <ul class="services-list">
+            <li class="service-feature">
+              <svg class="service-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="service-feature-text">Responsive & Mobile First</span>
+            </li>
+            <li class="service-feature">
+              <svg class="service-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="service-feature-text">Contact Forms</span>
+            </li>
+            <li class="service-feature">
+              <svg class="service-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="service-feature-text">SEO Optimised</span>
+            </li>
+            <li class="service-feature">
+              <svg class="service-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="service-feature-text">Google Maps Integration</span>
+            </li>
+            <li class="service-feature">
+              <svg class="service-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="service-feature-text">Fast Loading Speed</span>
+            </li>
+            <li class="service-feature">
+              <svg class="service-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="service-feature-text">CMS for Easy Updates</span>
+            </li>
+            <li class="service-feature">
+              <svg class="service-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="service-feature-text">Booking & Appointment Systems</span>
+            </li>
+            <li class="service-feature">
+              <svg class="service-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="service-feature-text">Secure & Scalable</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service Box 2: AI Automations -->
+        <div class="services-box">
+          <div class="services-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+          </div>
+          <h3 class="services-box-title">AI Automation Workflows</h3>
+          <ul class="services-list">
+            <li class="service-feature">
+              <svg class="service-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="service-feature-text">AI Receptionist</span>
+            </li>
+            <li class="service-feature">
+              <svg class="service-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="service-feature-text">Review & Feedback Requests</span>
+            </li>
+            <li class="service-feature">
+              <svg class="service-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="service-feature-text">Appointment Booking</span>
+            </li>
+            <li class="service-feature">
+              <svg class="service-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="service-feature-text">Lead Qualification</span>
+            </li>
+            <li class="service-feature">
+              <svg class="service-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="service-feature-text">WhatsApp Automations</span>
+            </li>
+            <li class="service-feature">
+              <svg class="service-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="service-feature-text">CRM Integration</span>
+            </li>
+            <li class="service-feature">
+              <svg class="service-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="service-feature-text">Automatic Email Replies</span>
+            </li>
+            <li class="service-feature">
+              <svg class="service-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="service-feature-text">Follow-up & Nurturing</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Why & About Section --- -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="why-about-grid">
+        <!-- Left: Why work with me -->
+        <div class="why-features">
+          <h2 class="why-header-text">Why Businesses<br>Work With Me</h2>
+          <div class="why-list">
+            <div class="why-item">
+              <div class="why-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              </div>
+              <h3 class="why-item-title">Fast</h3>
+              <p class="why-item-desc">Premium websites delivered efficiently.</p>
+            </div>
+            <div class="why-item">
+              <div class="why-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <h3 class="why-item-title">Modern Design</h3>
+              <p class="why-item-desc">Designed to build trust and convert.</p>
+            </div>
+            <div class="why-item">
+              <div class="why-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              </div>
+              <h3 class="why-item-title">Mobile First</h3>
+              <p class="why-item-desc">Looks amazing on every device.</p>
+            </div>
+            <div class="why-item">
+              <div class="why-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              </div>
+              <h3 class="why-item-title">Smart Automation</h3>
+              <p class="why-item-desc">Reduce repetitive work and respond faster.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: About Jasini (with photo and stats card overlapping) -->
+        <div class="about-profile-wrap">
+          <div class="profile-card">
+            <img src="assets/images/jasini-portrait.png" alt="Jasini Profile Picture">
+          </div>
+          <div class="about-info-box">
+            <span class="about-badge">About Me</span>
+            <h3 class="about-name">Hi, I'm Jasini.</h3>
+            <p class="about-bio">I design modern websites and build AI-powered systems that help businesses operate more efficiently and attract more customers. Whether it is a luxury hotel, a busy restaurant or a local barbershop, I focus on creating digital experiences that look exceptional and deliver real business results.</p>
+            <div class="about-stats">
+              <div class="stat-item">
+                <span class="stat-num">8+</span>
+                <span class="stat-label">Projects Done</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">Responsive</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">AI</span>
+                <span class="stat-label">Automation</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">UK</span>
+                <span class="stat-label">Business Focus</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Process Section --- -->
+  <section class="section section-light-sec" id="process">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">How I Work</span>
+        <h2 class="section-title">My Process</h2>
+      </div>
+
+      <div class="process-timeline">
+        <!-- Step 1 -->
+        <div class="process-step">
+          <div class="process-step-num">1</div>
+          <h3 class="process-step-title">Discovery</h3>
+          <p class="process-step-desc">Understanding your business goals and target customers.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="process-step">
+          <div class="process-step-num">2</div>
+          <h3 class="process-step-title">Design</h3>
+          <p class="process-step-desc">Creating a modern, high-converting design layout.</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="process-step">
+          <div class="process-step-num">3</div>
+          <h3 class="process-step-title">Development</h3>
+          <p class="process-step-desc">Building a fast, responsive and secure website.</p>
+        </div>
+        <!-- Step 4 -->
+        <div class="process-step">
+          <div class="process-step-num">4</div>
+          <h3 class="process-step-title">Launch</h3>
+          <p class="process-step-desc">Go live with ongoing support and improvements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- CTA Wave Banner --- -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-content">
+          <h2 class="cta-title">Ready to Elevate<br>Your Business?</h2>
+          <p class="cta-desc">Let's build a website your customers will remember.</p>
+        </div>
+        <button class="btn-primary" onclick="openConsultationModal()">
+          <span>Book a Free Consultation</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Footer --- -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="logo">
+            <div class="logo-icon">J</div>
+            <div class="logo-text">
+              <span class="logo-title">JASINI</span>
+              <span class="logo-sub">Digital Solutions</span>
+            </div>
+          </a>
+          <p class="footer-desc">Websites that look amazing. Automations that work. Helping businesses grow in the UK.</p>
+          <div class="footer-socials">
+            <a href="https://wa.me/#" target="_blank" class="social-icon" aria-label="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            </a>
+            <a href="https://linkedin.com/in/#" target="_blank" class="social-icon" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="https://instagram.com/#" target="_blank" class="social-icon" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://github.com/cyberjay0" target="_blank" class="social-icon" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title">Navigation</h3>
+          <ul class="footer-links">
+            <li><a href="#home" class="footer-link">Home</a></li>
+            <li><a href="#portfolio" class="footer-link">Portfolio</a></li>
+            <li><a href="#services" class="footer-link">Services</a></li>
+            <li><a href="#about" class="footer-link">About</a></li>
+            <li><a href="#process" class="footer-link">Process</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title">Services</h3>
+          <ul class="footer-links">
+            <li><a href="#services" class="footer-link">Website Design</a></li>
+            <li><a href="#services" class="footer-link">E-commerce Websites</a></li>
+            <li><a href="#services" class="footer-link">SEO Optimisation</a></li>
+            <li><a href="#services" class="footer-link">AI Automations</a></li>
+            <li><a href="#services" class="footer-link">Booking Systems</a></li>
+            <li><a href="#services" class="footer-link">Support & Maintenance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title">Let's Work Together</h3>
+          <div class="footer-contact">
+            <div class="contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:hello@jasinidigital.com">hello@jasinidigital.com</a>
+            </div>
+            <div class="contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>+44 7750 123456</span>
+            </div>
+            <div class="contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>London, United Kingdom</span>
+            </div>
+            <button class="btn-consultation" onclick="openConsultationModal()" style="margin-top: 10px;">
+              Book a Free Consultation
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Jasini Digital Solutions. All rights reserved.</span>
+        <span>Built with passion. Designed for results.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- consultation booking Modal --- -->
+  <div class="modal-overlay" id="consultation-modal">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeConsultationModal()" aria-label="Close modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      
+      <!-- Booking Form -->
+      <div id="booking-form-wrap">
+        <h3 class="modal-title">Book a Consultation</h3>
+        <p class="modal-desc">Let's discuss how we can build a premium website or set up automations to scale your business.</p>
+        
+        <form id="consultation-form" onsubmit="handleFormSubmit(event)">
+          <div class="form-group">
+            <label class="form-label" for="client-name">Your Name</label>
+            <input class="form-control" type="text" id="client-name" required placeholder="John Doe">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="client-email">Email Address</label>
+            <input class="form-control" type="email" id="client-email" required placeholder="john@example.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="client-business">Business Name</label>
+            <input class="form-control" type="text" id="client-business" required placeholder="e.g. Lewis Luxury Hotel">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="client-services">Services Needed</label>
+            <select class="form-control" id="client-services" required>
+              <option value="" disabled selected>Select an option</option>
+              <option value="website">Premium Website Design</option>
+              <option value="automation">AI Automation Workflows</option>
+              <option value="both">Both Website & Automations</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="client-message">Brief Description</label>
+            <textarea class="form-control" id="client-message" placeholder="Describe your project goals or automation needs..."></textarea>
+          </div>
+          <button class="btn-primary form-submit" type="submit">Submit Request</button>
+        </form>
+      </div>
+
+      <!-- Success State -->
+      <div id="booking-success-wrap" class="form-success-panel">
+        <div class="form-success-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h3 class="modal-title">Consultation Requested</h3>
+        <p class="modal-desc" style="margin-bottom: 0;">Thank you for your request. I will review your details and reach out to you within 24 hours to schedule our call.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- Project Detail Modal --- -->
+  <div class="modal-overlay" id="project-modal">
+    <div class="modal-container project-modal-container">
+      <button class="modal-close" onclick="closeProjectModal()" aria-label="Close modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      
+      <div class="project-modal-hero">
+        <img id="project-modal-img" src="" alt="Project Preview">
+      </div>
+      
+      <div class="project-modal-meta">
+        <div>
+          <h3 class="project-modal-title" id="project-modal-title">Project Name</h3>
+          <div class="project-modal-cats">
+            <span class="project-modal-cat" id="project-modal-cat">Category</span>
+          </div>
+        </div>
+        <div class="project-modal-actions">
+          <a href="" id="project-modal-github" target="_blank" class="btn-primary">
+            <span>View GitHub</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+        </div>
+      </div>
+      
+      <p class="project-modal-desc" id="project-modal-desc">Detailed project description goes here.</p>
+      
+      <div class="project-modal-details-grid">
+        <div>
+          <h4 class="detail-label">Client Industry</h4>
+          <p class="detail-val" id="project-modal-industry">Industry Name</p>
+        </div>
+        <div>
+          <h4 class="detail-label">Key Technologies</h4>
+          <p class="detail-val" id="project-modal-tech">Tech Stack</p>
+        </div>
+        <div>
+          <h4 class="detail-label">Project Scope</h4>
+          <p class="detail-val" id="project-modal-scope">Scope details</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
