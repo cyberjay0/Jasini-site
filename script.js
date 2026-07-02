@@ -63,25 +63,42 @@ const projectsData = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Preloader sequence
+  // 1. Premium Preloader Ticker (Circular Progress)
   const preloader = document.getElementById("preloader");
-  const bar = document.getElementById("preloader-bar");
+  const progressCircle = document.getElementById("preloader-progress");
+  const percentText = document.getElementById("preloader-percent");
+  
+  const circumference = 339.29; // 2 * pi * 54
   let progress = 0;
   
   const interval = setInterval(() => {
-    progress += Math.floor(Math.random() * 15) + 5;
+    progress += Math.floor(Math.random() * 12) + 4;
     if (progress >= 100) {
       progress = 100;
       clearInterval(interval);
       setTimeout(() => {
         preloader.style.opacity = "0";
         preloader.style.visibility = "hidden";
-      }, 300);
+      }, 500);
     }
-    bar.style.width = `${progress}%`;
-  }, 80);
+    
+    // Update circle SVG path and text percentage
+    const offset = circumference - (progress / 100) * circumference;
+    if (progressCircle) progressCircle.style.strokeDashoffset = offset;
+    if (percentText) percentText.innerText = `${progress}%`;
+  }, 60);
 
-  // 2. Mobile Nav Toggle
+  // 2. Scroll Progress Bar
+  const scrollBar = document.getElementById("scroll-bar");
+  window.addEventListener("scroll", () => {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight > 0) {
+      const scrolled = (window.scrollY / docHeight) * 100;
+      if (scrollBar) scrollBar.style.width = `${scrolled}%`;
+    }
+  });
+
+  // 3. Mobile Nav Toggle
   const mobileToggle = document.getElementById("mobile-toggle");
   const navMenu = document.getElementById("nav-menu");
   
@@ -101,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. Header Scrolled State
+  // 4. Header Scrolled State
   const header = document.getElementById("header");
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
@@ -111,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 4. Scroll Active Navigation Link Highlight
+  // 5. Scroll Active Navigation Link Highlight
   const sections = document.querySelectorAll("section");
   const navLinksList = document.querySelectorAll(".nav-link");
   
@@ -119,8 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let current = "";
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (window.scrollY >= (sectionTop - 200)) {
+      if (window.scrollY >= (sectionTop - 240)) {
         current = section.getAttribute("id");
       }
     });
@@ -133,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 5. Hero Card Stack Mouse Perspective (micro-interaction)
+  // 6. Hero Card Stack Mouse Perspective (Luxury Parallax)
   const stack = document.querySelector(".mockup-stack");
   if (stack) {
     stack.addEventListener("mousemove", (e) => {
@@ -143,8 +159,9 @@ document.addEventListener("DOMContentLoaded", () => {
       
       const cards = document.querySelectorAll(".mockup-card");
       cards.forEach((card, index) => {
-        const factor = (3 - index) * 0.05;
-        card.style.transform = `rotateY(${-15 + x * factor}deg) rotateX(${10 - y * factor}deg) translateY(${-40 + index * 80}px) translateX(${index * 30}px) translateZ(${(2 - index) * 50}px)`;
+        const factor = (3 - index) * 0.04;
+        // Rotation and translate math aligned with style.css structure
+        card.style.transform = `rotateY(${-20 + x * factor}deg) rotateX(${10 - y * factor}deg) translateY(${-30 + index * 80}px) translateX(${index * 40}px) translateZ(${80 - index * 60}px)`;
       });
     });
     

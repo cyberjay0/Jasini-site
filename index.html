@@ -9,14 +9,29 @@
 </head>
 <body>
 
-  <!-- --- Custom Preloader --- -->
+  <!-- --- Scroll Progress Bar --- -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scroll-bar"></div>
+  </div>
+
+  <!-- --- Custom Circular Preloader --- -->
   <div id="preloader">
     <div class="preloader-content">
-      <div class="preloader-logo">J <span>JASINI</span></div>
-      <div class="preloader-bar-wrap">
-        <div class="preloader-bar" id="preloader-bar"></div>
+      <div class="preloader-circle-wrap">
+        <svg class="preloader-svg" width="120" height="120" viewBox="0 0 120 120">
+          <circle class="preloader-circle-bg" cx="60" cy="60" r="54" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="3"></circle>
+          <circle class="preloader-circle-progress" id="preloader-progress" cx="60" cy="60" r="54" fill="none" stroke="url(#preloader-gold-grad)" stroke-width="3" stroke-dasharray="339.29" stroke-dashoffset="339.29" stroke-linecap="round"></circle>
+          <defs>
+            <linearGradient id="preloader-gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#f5e3ca"></stop>
+              <stop offset="100%" stop-color="#c5a880"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="preloader-percent" id="preloader-percent">0%</div>
       </div>
-      <div class="preloader-text">Loading Excellence</div>
+      <div class="preloader-logo">JASINI</div>
+      <div class="preloader-text">Digital Excellence</div>
     </div>
   </div>
 
