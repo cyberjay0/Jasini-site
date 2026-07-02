@@ -594,12 +594,29 @@ img {
   opacity: 0.6;
 }
 
-.mockup-card:hover {
-  transform: rotateY(-5deg) rotateX(5deg) translateZ(120px) translateY(-20px) translateX(-10px) !important;
+/* Per-card hover: each lifts toward viewer from its own position */
+.mockup-card:nth-child(1):hover {
+  transform: rotateY(-8deg) rotateX(6deg) translateZ(120px) translateY(-50px) translateX(-10px);
+  z-index: 10;
+  opacity: 1;
+  border-color: var(--color-gold);
+  box-shadow: 0 25px 60px rgba(197, 168, 128, 0.3);
+}
+
+.mockup-card:nth-child(2):hover {
+  transform: rotateY(-8deg) rotateX(6deg) translateZ(80px) translateY(20px) translateX(20px);
   z-index: 10;
   opacity: 1;
   border-color: var(--color-gold);
   box-shadow: 0 25px 60px rgba(197, 168, 128, 0.25);
+}
+
+.mockup-card:nth-child(3):hover {
+  transform: rotateY(-8deg) rotateX(6deg) translateZ(60px) translateY(90px) translateX(50px);
+  z-index: 10;
+  opacity: 1;
+  border-color: var(--color-gold);
+  box-shadow: 0 25px 60px rgba(197, 168, 128, 0.2);
 }
 
 .mockup-card:hover img {
