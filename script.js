@@ -8,7 +8,7 @@ const projectsData = {
     tech: "Vanilla HTML, CSS, JavaScript, Webpack",
     scope: "Responsive Design, Interactive Calendar Booking, Custom SVG Maps",
     img: "assets/images/project-lewis.png",
-    github: "https://github.com/cyberjay0/Lewis-Garden-Suites"
+    website: "https://lewis-garden-suites.vercel.app/"
   },
   crustncrumb: {
     title: "CrustNcrumb Pastry",
@@ -18,17 +18,7 @@ const projectsData = {
     tech: "Vanilla HTML, CSS, JavaScript",
     scope: "Interactive Product Menus, Contact Order Forms, Pastry Catalog",
     img: "assets/images/project-crustncrumb.png",
-    github: "https://github.com/cyberjay0/CrustNcrumb-Pastry"
-  },
-  jayautos: {
-    title: "Jayautos",
-    category: "Car Dealership",
-    description: "Jayautos is a vehicle showroom website developed for a premier car dealership in Abuja. The platform features an interactive catalog search with advanced filters (make, model, price, year) and lead capturing forms. Built with React and TypeScript.",
-    industry: "Automotive Retail",
-    tech: "TypeScript, React, CSS Modules",
-    scope: "Dynamic Catalog Search, Advanced Filtering, Finance Request Forms",
-    img: "assets/images/project-jayautos.png",
-    github: "https://github.com/cyberjay0/Jayautos"
+    website: "https://crust-ncrumb-pastry.vercel.app/"
   },
   mmmautos: {
     title: "mmmautos",
@@ -38,7 +28,7 @@ const projectsData = {
     tech: "Vanilla JavaScript, CSS Grid, LocalStorage Integration",
     scope: "Service Booking Schedule, Spare Parts Catalog, Customer Detailing Showcase",
     img: "assets/images/project-mmmautos.png",
-    github: "https://github.com/cyberjay0/mmmautos"
+    website: "https://mmmautos-gold.vercel.app/"
   },
   fade: {
     title: "Fade District",
@@ -48,7 +38,7 @@ const projectsData = {
     tech: "Vanilla CSS, HTML5, JavaScript",
     scope: "Styling Portfolio, Real-time Appointment Scheduler, Team Profiles",
     img: "assets/images/project-fade.png",
-    github: "https://github.com/cyberjay0/Fade-district"
+    website: "https://fade-district-seven.vercel.app/"
   },
   bluehaven: {
     title: "Blue Haven",
@@ -58,7 +48,17 @@ const projectsData = {
     tech: "Vanilla HTML, CSS, JavaScript",
     scope: "Responsive Design, Room Gallery, Contact and Booking Flow",
     img: "assets/images/project-bluehaven.png",
-    github: "https://github.com/cyberjay0"
+    website: "https://blue-haven-suites.vercel.app/"
+  },
+  blackoak: {
+    title: "Black Oak Residence",
+    category: "Luxury Real Estate",
+    description: "Black Oak Residence is a high-end real estate website designed to showcase a premium property. The site features an immersive visual experience with curated property photography, detailed amenity listings, and an elegant inquiry flow built for discerning buyers.",
+    industry: "Luxury Real Estate",
+    tech: "Vanilla HTML, CSS, JavaScript",
+    scope: "Property Showcase, Image Gallery, Lead Inquiry Form",
+    img: "assets/images/project-blackoak.png",
+    website: "https://black-oak-residence.vercel.app/"
   }
 };
 
@@ -218,7 +218,7 @@ function openProjectModal(projectId) {
   document.getElementById("project-modal-industry").innerText = project.industry;
   document.getElementById("project-modal-tech").innerText = project.tech;
   document.getElementById("project-modal-scope").innerText = project.scope;
-  document.getElementById("project-modal-github").href = project.github;
+  document.getElementById("project-modal-website").href = project.website;
   
   const modal = document.getElementById("project-modal");
   modal.classList.add("active");
