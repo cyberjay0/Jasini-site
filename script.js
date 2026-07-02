@@ -50,15 +50,15 @@ const projectsData = {
     img: "assets/images/project-fade.png",
     github: "https://github.com/cyberjay0/Fade-district"
   },
-  blackoak: {
-    title: "Black Oak Residence",
-    category: "Luxury Property Website",
-    description: "Black Oak Residence is a minimalist architectural design showcase for an ultra-luxury residential property. It focuses on large high-resolution images, virtual walkthrough integrations, and sleek glassmorphism panels to convey exclusivity.",
-    industry: "Luxury Real Estate and Architecture",
-    tech: "Vanilla JavaScript, CSS, Intersection Observer",
-    scope: "Virtual Tour Embed, High-Res Image Sliders, Minimalist Showcase Layout",
-    img: "assets/images/project-blackoak.png",
-    github: "https://github.com/cyberjay0/Black-Oak-Residence"
+  bluehaven: {
+    title: "Blue Haven",
+    category: "Hotel Website",
+    description: "Blue Haven is a luxury boutique hotel website showcasing rooms, amenities, and experiences in a clean and elegant design. The site features a smooth booking experience, curated gallery sections, and a premium feel tailored to attract high-end guests.",
+    industry: "Hospitality and Tourism",
+    tech: "Vanilla HTML, CSS, JavaScript",
+    scope: "Responsive Design, Room Gallery, Contact and Booking Flow",
+    img: "assets/images/project-bluehaven.png",
+    github: "https://github.com/cyberjay0"
   }
 };
 
