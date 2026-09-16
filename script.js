@@ -59,6 +59,36 @@ const projectsData = {
     scope: "Property Showcase, Image Gallery, Lead Inquiry Form",
     img: "assets/images/project-blackoak.png",
     website: "https://black-oak-residence.vercel.app/"
+  },
+  novatech: {
+    title: "Novatech Support",
+    category: "AI Automation",
+    description: "Novatech Customer Support is an AI-powered reception and support assistant. It uses n8n to integrate Google Gemini embeddings, Pinecone vector store, and Postgres memory, enabling an intelligent chatbot that interfaces via Telegram and Airtable to automate ticketing and customer interactions seamlessly.",
+    industry: "Customer Service and Support",
+    tech: "n8n, Google Gemini, Pinecone, Postgres, Airtable",
+    scope: "AI Chatbot, Ticket Automation, CRM Integration",
+    img: "assets/images/project-novatech-automation.png",
+    website: "https://wa.me/2349115205339"
+  },
+  veritas: {
+    title: "Veritas RAG Pipeline",
+    category: "AI Automation",
+    description: "Veritas RAG is a sophisticated Retrieval-Augmented Generation pipeline built to process and index documents. Utilizing n8n, it automatically pulls files from Google Drive, processes them using a Recursive Character Text Splitter, embeds the content via Google Gemini, and securely stores the knowledge base in a Pinecone Vector Store for AI agents to query.",
+    industry: "Data Processing & AI Search",
+    tech: "n8n, Google Drive API, Pinecone, Gemini",
+    scope: "Document Processing, Vector Database, RAG Pipeline",
+    img: "assets/images/project-veritas-automation.png",
+    website: "https://wa.me/2349115205339"
+  },
+  splendall: {
+    title: "Splendall Store",
+    category: "AI Automation",
+    description: "Splendall Store features a complex e-commerce automation workflow designed to streamline order processing and fulfillment. Using n8n, it connects multiple data sources, categorizes inventory, automates supplier communications, and pushes real-time notifications to team members, ensuring smooth operations.",
+    industry: "E-commerce & Retail",
+    tech: "n8n, E-commerce APIs, Communication Tools",
+    scope: "Order Processing, Notification Systems, Inventory Sync",
+    img: "assets/images/project-splendall-automation.png",
+    website: "https://wa.me/2349115205339"
   }
 };
 
