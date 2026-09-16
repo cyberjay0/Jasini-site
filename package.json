@@ -1,7 +1,7 @@
 {
   "name": "jasini-portfolio",
   "version": "1.0.0",
-  "description": "Premium portfolio website for Jasini Digital Solutions",
+  "description": "Premium portfolio website for JASINOVA Digital Solutions",
   "main": "index.html",
   "scripts": {
     "dev": "npx -y http-server -p 8088"
