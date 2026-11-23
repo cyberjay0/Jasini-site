@@ -2,11 +2,21 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
-import { contact } from "@/lib/opening-data";
+import { contact, emailLink, whatsappLink } from "@/lib/opening-data";
 import { cn } from "@/lib/utils";
 
-/** "Book a call" button that offers WhatsApp or email. */
-export function BookCall({ className, label = "Book a call" }: { className?: string; label?: string }) {
+/** "Book a call" button that offers WhatsApp or email, optionally with a prefilled message. */
+export function BookCall({
+  className,
+  label = "Book a call",
+  message,
+  align = "end",
+}: {
+  className?: string;
+  label?: string;
+  message?: string;
+  align?: "start" | "center" | "end";
+}) {
   const [open, setOpen] = useState(false);
   const root = useRef<HTMLDivElement>(null);
 
@@ -16,13 +26,16 @@ export function BookCall({ className, label = "Book a call" }: { className?: str
       if (!root.current?.contains(event.target as Node)) setOpen(false);
     };
     const escape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") {
+        event.stopPropagation();
+        setOpen(false);
+      }
     };
     document.addEventListener("pointerdown", outside);
-    document.addEventListener("keydown", escape);
+    document.addEventListener("keydown", escape, true);
     return () => {
       document.removeEventListener("pointerdown", outside);
-      document.removeEventListener("keydown", escape);
+      document.removeEventListener("keydown", escape, true);
     };
   }, [open]);
 
@@ -38,14 +51,14 @@ export function BookCall({ className, label = "Book a call" }: { className?: str
         {label} <ArrowUpRight aria-hidden="true" />
       </button>
       {open && (
-        <div className="ko-book-menu" role="menu">
-          <a role="menuitem" href={contact.whatsapp} target="_blank" rel="noopener noreferrer">
+        <div className="ko-book-menu" role="menu" data-align={align}>
+          <a role="menuitem" href={whatsappLink(message)} target="_blank" rel="noopener noreferrer">
             <MessageCircle aria-hidden="true" />
             <span>
               WhatsApp<small>Fastest reply</small>
             </span>
           </a>
-          <a role="menuitem" href={contact.email}>
+          <a role="menuitem" href={emailLink(message)}>
             <Mail aria-hidden="true" />
             <span>
               Email<small>{contact.emailAddress}</small>

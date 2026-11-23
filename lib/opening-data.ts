@@ -1,15 +1,9 @@
-export type Variant = "a" | "b" | "c";
-export type Theme = "forest" | "paper" | "alpine";
+export type Theme = "forest" | "paper";
 
-export const themes: { id: Theme; label: string; color: string }[] = [
-  { id: "forest", label: "Forest (dark)", color: "#0B1A11" },
-  { id: "paper", label: "Paper (light)", color: "#ECEEE6" },
-  { id: "alpine", label: "iPhone green", color: "#394C38" },
-];
-
-export function parseTheme(value: string | undefined): Theme {
-  return value === "paper" || value === "alpine" ? value : "forest";
-}
+export const themes: Record<Theme, { label: string; color: string }> = {
+  forest: { label: "Dark", color: "#0B1A11" },
+  paper: { label: "Light", color: "#ECEEE6" },
+};
 
 /** Work that flashes over the name during the opening. Order mixes the three kinds of work. */
 export const stackLooks = [
@@ -26,10 +20,17 @@ export const stackLooks = [
   { src: "/images/opening/portrait.webp", x: 0, y: 0 },
 ];
 
-const callMessage = "Hi Jasini, I would like to book a call about an automation for my business.";
+const defaultMessage = "Hi Jasini, I would like to book a call about an automation for my business.";
 
 export const contact = {
-  whatsapp: `https://wa.me/2349115205339?text=${encodeURIComponent(callMessage)}`,
+  whatsappNumber: "2349115205339",
   emailAddress: "skarijasini@gmail.com",
-  email: `mailto:skarijasini@gmail.com?subject=${encodeURIComponent("Book a call")}&body=${encodeURIComponent(callMessage)}`,
 };
+
+export function whatsappLink(message = defaultMessage) {
+  return `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+
+export function emailLink(message = defaultMessage, subject = "Book a call") {
+  return `mailto:${contact.emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+}
