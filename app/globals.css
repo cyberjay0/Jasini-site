@@ -1172,6 +1172,105 @@ a {
   height: 14px;
 }
 
+/* ───────── Laptops and desktops: scale the composition with the screen ─────────
+   The design was approved as it looks on a 2560px wide layout. Here the big
+   pieces (hero name, headings, spacing, header) are sized as a share of the
+   screen width, so a 1280px laptop shows the same composition at half size.
+   Body text keeps a readable floor instead of shrinking with it. */
+@media (min-width: 781px) {
+  .ko {
+    --edge: clamp(14px, 1.72vw, 44px);
+    --gap: clamp(9px, 0.94vw, 24px);
+    --nav-height: clamp(52px, 2.9vw, 74px);
+  }
+  .ko-logo {
+    font-size: max(0.88rem, 0.6vw);
+  }
+  .ko-nav {
+    font-size: max(0.8rem, 0.54vw);
+  }
+  .ko-nav-cta {
+    min-height: max(32px, 1.4vw);
+  }
+  .ko-drawn-hero {
+    padding-block: max(2rem, 2vw) max(5rem, 4vw);
+  }
+  .ko-eyebrow {
+    margin-bottom: max(1.1rem, 1.6vw);
+    font-size: max(0.66rem, 0.45vw);
+  }
+  .ko-drawn-svg {
+    width: min(100%, 46.1vw);
+  }
+  .ko-tagline {
+    margin-top: max(1rem, 1.25vw);
+    font-size: max(0.95rem, 0.72vw);
+  }
+  .ko-cta-row {
+    margin-top: max(1.25rem, 1.4vw);
+  }
+  .ko-cta,
+  .ko-cta-ghost {
+    min-height: max(42px, 1.9vw);
+    font-size: max(0.82rem, 0.55vw);
+  }
+  .ko-section-head {
+    padding-top: max(64px, 7.4vw);
+    margin-bottom: max(24px, 2.5vw);
+  }
+  .ko-section-row h2 {
+    font-size: max(2.6rem, 5.3vw);
+  }
+  .ko-group + .ko-group {
+    margin-top: max(72px, 8.6vw);
+  }
+  .ko-group-head h3 {
+    font-size: max(1.1rem, 1vw);
+  }
+  .ko-spread {
+    margin-top: max(48px, 6.25vw);
+  }
+  .ko-next-card {
+    min-height: max(200px, 14vw);
+  }
+  .ko-next-card p {
+    font-size: max(1.3rem, 1.44vw);
+  }
+  .ko-service h3 {
+    font-size: max(1.6rem, 2.44vw);
+  }
+  .ko-service {
+    padding-bottom: max(18px, 1.56vw);
+  }
+  .ko-process {
+    margin-top: max(36px, 3.5vw);
+  }
+  .ko-process strong {
+    font-size: max(1.15rem, 1vw);
+  }
+  .ko-about-text .ko-about-lead {
+    font-size: max(1.5rem, 1.875vw);
+  }
+  .ko-footer {
+    margin-top: max(100px, 10.2vw);
+  }
+  .ko-footer-main {
+    padding-block: max(20px, 2.4vw) max(36px, 3.1vw);
+  }
+  .ko-footer-main h2 {
+    font-size: max(1.9rem, 4.06vw);
+  }
+  .ko-footer-bottom {
+    min-height: max(56px, 3vw);
+  }
+  .ko-dialog {
+    width: min(1120px, max(760px, 60vw), calc(100% - 28px));
+  }
+  .ko-dialog-text h2 {
+    font-size: max(1.6rem, 1.9vw);
+  }
+}
+
 /* ───────── Tablet ───────── */
 @media (max-width: 980px) {
   .ko-section-row,
