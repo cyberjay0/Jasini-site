@@ -1,10 +1,31 @@
 {
-  "name": "jasini-portfolio",
-  "version": "1.0.0",
-  "description": "Premium portfolio website for JASINOVA Digital Solutions",
-  "main": "index.html",
+  "name": "jasini-site",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Jasini: AI automation studio portfolio",
   "scripts": {
-    "dev": "npx -y http-server -p 8088"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@fontsource-variable/manrope": "^5.3.0",
+    "@gsap/react": "^2.1.2",
+    "clsx": "^2.1.1",
+    "gsap": "^3.15.1",
+    "lucide-react": "^1.78.0",
+    "motion": "^14.14.0",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwind-merge": "^3.7.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^5.9.3"
+  }
 }

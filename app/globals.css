@@ -1,0 +1,582 @@
+@import "tailwindcss";
+
+/* ───────── Base ───────── */
+html,
+body {
+  margin: 0;
+  background: #07110b;
+  -webkit-font-smoothing: antialiased;
+  font-synthesis: none;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+img {
+  display: block;
+  max-inline-size: 100%;
+}
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+:where(a, button):focus-visible {
+  outline: 2px solid var(--focus, #8bd39b);
+  outline-offset: 4px;
+}
+
+/* ───────── Jasini themes (Knockout swatches, in greens) ───────── */
+.ko {
+  --edge: clamp(14px, 2.35vw, 44px);
+  --gap: clamp(9px, 1.35vw, 24px);
+  --nav-height: clamp(52px, 4.6vw, 74px);
+  --intro-page: #e9ece3;
+  --intro-ink: #2f4a33;
+  --intro-ui: #22352a;
+  font-family: "Manrope Variable", system-ui, sans-serif;
+  background: var(--page);
+  color: var(--ink);
+  min-height: 100dvh;
+}
+.ko[data-theme="forest"] {
+  --page: #07110b;
+  --ink: #e5ece3;
+  --muted: #8fa192;
+  --line: #243629;
+  --surface: #0e1b13;
+  --accent: #8bd39b;
+  --accent-ink: #06110a;
+  --focus: #8bd39b;
+  --draw-from: #c9f2d1;
+  --draw-to: #4fa36a;
+}
+.ko[data-theme="paper"] {
+  --page: #eceee6;
+  --ink: #0e1a12;
+  --muted: #5b6b5f;
+  --line: #b7c1b3;
+  --surface: #e0e5d9;
+  --accent: #2f6b40;
+  --accent-ink: #f2f5ec;
+  --focus: #2f6b40;
+  --draw-from: #6cc283;
+  --draw-to: #1d3b27;
+}
+.ko[data-theme="alpine"] {
+  --page: #394c38;
+  --ink: #f0f3ea;
+  --muted: #c5d0bf;
+  --line: #5f745c;
+  --surface: #2f402e;
+  --accent: #f0f3ea;
+  --accent-ink: #2a3929;
+  --focus: #f0f3ea;
+  --draw-from: #f3f7ee;
+  --draw-to: #a9d8a6;
+}
+.ko-wrap {
+  width: calc(100% - var(--edge) * 2);
+  margin-inline: auto;
+}
+
+/* ───────── Curtain mechanics (from Knockout) ───────── */
+.ko[data-intro] {
+  height: 100dvh;
+  overflow: clip;
+}
+.ko[data-intro] .ko-shop-outer {
+  position: fixed;
+  z-index: 26;
+  inset: 0;
+  height: 100dvh;
+  overflow: hidden;
+  visibility: hidden;
+}
+.ko[data-intro] .ko-shop-inner {
+  height: 100%;
+  overflow: hidden;
+}
+.ko[data-intro] .ko-shop {
+  min-height: 100dvh;
+  background: var(--page);
+}
+
+/* ───────── Opening ───────── */
+.ko-intro {
+  position: fixed;
+  z-index: 25;
+  inset: 0;
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  overflow: clip;
+  background: var(--intro-page);
+  color: var(--intro-ink);
+  --focus: var(--intro-ink);
+}
+.ko-intro-lockup {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  font-size: clamp(2.5rem, min(17vw, 30svh), 24rem);
+  line-height: 0.92;
+}
+.ko-intro-word {
+  position: relative;
+  z-index: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.ko-intro-lockup[data-variant="b"] .ko-intro-word {
+  transform: scaleX(1.12);
+}
+.ko-intro-svg {
+  display: block;
+  height: 0.8em;
+  width: auto;
+  overflow: visible;
+}
+.ko-intro-art {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  font-size: 0.84em;
+  pointer-events: none;
+}
+.ko-intro-layer {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 1em;
+  aspect-ratio: 1;
+  transform: translate(calc(-50% + var(--layer-x)), calc(-50% + var(--layer-y)));
+}
+.ko-intro-face {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #dfe4d8;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 18px 40px -24px rgb(16 32 20 / 0.45);
+}
+.ko-intro-face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ko-intro-count {
+  position: absolute;
+  z-index: 2;
+  left: calc(100% + 0.8rem);
+  top: 0;
+  font: 600 clamp(0.67rem, 1.1vw, 1rem) / 1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+  color: var(--intro-ui);
+}
+.ko-intro-lockup[data-variant="b"] .ko-intro-count {
+  left: calc(106% + 0.8rem);
+}
+.ko-intro-skip {
+  position: absolute;
+  z-index: 3;
+  top: var(--edge);
+  right: var(--edge);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--intro-ui);
+  font-size: 0.77rem;
+  font-weight: 800;
+}
+.ko-intro-skip:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.ko-intro-skip svg {
+  width: 15px;
+  height: 15px;
+}
+.ko-intro-cue {
+  position: absolute;
+  bottom: max(var(--edge), calc(env(safe-area-inset-bottom) + 16px));
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--intro-ui);
+  font-size: 0.77rem;
+  font-weight: 750;
+}
+.ko-intro-cue svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ───────── Wordmark (solid, Knockout) ───────── */
+.ko-word {
+  display: inline-flex;
+  align-items: flex-end;
+  width: max-content;
+  font-weight: 800;
+  letter-spacing: -0.075em;
+}
+.ko-glyph {
+  display: block;
+  overflow: clip;
+}
+.ko-glyph-ink {
+  display: block;
+  padding: 0.055em 0.028em 0.095em 0;
+}
+.ko-word-stamp {
+  font-size: 0.09em;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0 0.08em 1.55em 0.75em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ───────── Header ───────── */
+.ko-header {
+  position: fixed;
+  z-index: 5;
+  inset: 0 0 auto;
+  background: var(--page);
+}
+.ko-header-inner {
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.ko-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: -0.03em;
+}
+.ko-logo svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.6;
+}
+.ko-logo:hover {
+  color: var(--accent);
+}
+.ko-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2.37vw, 38px);
+  font-size: clamp(0.74rem, 0.9vw, 0.85rem);
+  font-weight: 750;
+  letter-spacing: -0.01em;
+}
+.ko-nav > a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.ko-nav > a:hover {
+  color: var(--accent);
+}
+.ko-swatches {
+  display: flex;
+  gap: 2px;
+}
+.ko-swatches button {
+  width: 30px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+}
+.ko-swatches span {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--ink) 35%, transparent);
+}
+.ko-swatches button[aria-pressed="true"] span {
+  box-shadow:
+    0 0 0 2px var(--page),
+    0 0 0 3.5px var(--ink);
+}
+
+/* ───────── Book a call ───────── */
+.ko-book {
+  position: relative;
+}
+.ko-book-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  font-weight: 800;
+}
+.ko-book-trigger svg {
+  width: 14px;
+  height: 14px;
+}
+.ko-nav-cta {
+  padding: 0 14px;
+  min-height: 36px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.ko-note-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.ko-book-menu {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 240px;
+  padding: 6px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 50px -28px rgb(0 0 0 / 0.55);
+  display: grid;
+  gap: 2px;
+  text-align: left;
+}
+.ko-hero-note .ko-book-menu {
+  left: 0;
+  right: auto;
+}
+.ko-book-menu a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 0.86rem;
+}
+.ko-book-menu a:hover {
+  background: color-mix(in oklab, var(--ink) 8%, transparent);
+}
+.ko-book-menu svg {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+  flex: none;
+}
+.ko-book-menu span {
+  display: grid;
+}
+.ko-book-menu small {
+  font-weight: 600;
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+/* ───────── Hero: solid name (options A and C) ───────── */
+.ko-main {
+  padding-top: var(--nav-height);
+}
+.ko-hero {
+  padding-top: clamp(2px, 0.95vw, 18px);
+}
+.ko-title-frame {
+  container-type: inline-size;
+  overflow: clip;
+}
+.ko-title-frame h1 {
+  margin: 0;
+  width: max-content;
+  font-size: clamp(56px, 33cqw, 640px);
+  line-height: 0.89;
+  transform: scaleX(var(--word-stretch, 1));
+  transform-origin: left center;
+}
+.ko-title-frame h1:focus {
+  outline: none;
+}
+.ko-hero-rule {
+  height: 1px;
+  background: var(--ink);
+  opacity: 0.78;
+  transform-origin: left;
+}
+.ko-hero-note {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.6fr auto;
+  gap: var(--gap);
+  align-items: start;
+  padding-block: clamp(12px, 1.75vw, 28px) clamp(18px, 3vw, 45px);
+  font-size: clamp(0.72rem, 1.02vw, 0.9rem);
+  font-weight: 700;
+  letter-spacing: -0.017em;
+  line-height: 1.35;
+}
+.ko-hero-note .ko-book-trigger {
+  min-height: 0;
+}
+.ko-hero-note p {
+  margin: 0;
+  max-width: 36ch;
+  color: var(--muted);
+}
+.ko-hero-note > span {
+  text-align: right;
+  color: var(--muted);
+}
+
+/* ───────── Hero: drawn name (option B, the 21st.dev hero) ───────── */
+.ko-drawn-hero {
+  position: relative;
+  min-height: calc(100dvh - var(--nav-height));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem var(--edge) 6rem;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, color-mix(in oklab, var(--accent) 16%, transparent), transparent),
+    radial-gradient(ellipse 60% 50% at 80% 110%, color-mix(in oklab, var(--accent) 10%, transparent), transparent);
+}
+.ko-eyebrow {
+  margin: 0 0 clamp(1.5rem, 3vw, 2.5rem);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.ko-drawn-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.ko-drawn-svg {
+  width: min(100%, 1180px);
+  height: auto;
+  overflow: visible;
+}
+.ko-tagline {
+  margin: clamp(1.25rem, 2.5vw, 2rem) 0 0;
+  max-width: 34ch;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.25vw, 1.15rem);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+.ko-cta-row {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+}
+.ko-cta {
+  padding: 0 1.4rem;
+  min-height: 48px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.88rem;
+}
+.ko-cta-row .ko-book-menu {
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
+.ko-scroll-cue {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: color-mix(in oklab, var(--ink) 45%, transparent);
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+.ko-scroll-line {
+  display: block;
+  width: 1px;
+  height: 32px;
+  transform-origin: top;
+  background: linear-gradient(to bottom, color-mix(in oklab, var(--ink) 55%, transparent), transparent);
+  animation: ko-scroll-cue 1.8s ease-in-out infinite;
+}
+@keyframes ko-scroll-cue {
+  0%,
+  100% {
+    transform: scaleY(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scaleY(0.55);
+    opacity: 0.2;
+  }
+}
+
+/* ───────── Phase 2 placeholder ───────── */
+.ko-next {
+  padding-block: clamp(40px, 8vw, 120px);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* ───────── Small screens ───────── */
+@media (max-width: 780px) {
+  .ko-intro-lockup {
+    font-size: min(25vw, 30svh);
+  }
+  .ko-intro-count {
+    left: auto;
+    right: 0;
+    top: calc(100% + 0.9rem);
+  }
+  .ko-intro-lockup[data-variant="b"] .ko-intro-count {
+    left: auto;
+  }
+  .ko-nav-secondary,
+  .ko-nav > a {
+    display: none;
+  }
+  .ko-hero-note {
+    grid-template-columns: 1fr auto;
+    row-gap: 11px;
+    padding-bottom: 20px;
+  }
+  .ko-hero-note > *:nth-child(even) {
+    justify-self: end;
+  }
+  .ko-hero-note .ko-book-menu {
+    left: auto;
+    right: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ko-scroll-line {
+    animation: none;
+    opacity: 0.45;
+  }
+}
