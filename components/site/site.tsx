@@ -32,8 +32,12 @@ export function Site() {
     } catch {
       // Storage can be blocked; the default theme is fine.
     }
-    // Deep links (for example /#work) and reduced motion skip the opening.
-    if (reducedMotion() || location.hash) setPhase("ready");
+    // Deep links (for example /#work), reduced motion and search engine or link preview
+    // crawlers skip the opening, so the whole page is visible to them straight away.
+    const crawler = /bot|crawl|spider|slurp|lighthouse|google-|facebookexternalhit|whatsapp|linkedin|preview/i.test(
+      navigator.userAgent,
+    );
+    if (reducedMotion() || location.hash || crawler) setPhase("ready");
   }, []);
 
   useLayoutEffect(() => {
